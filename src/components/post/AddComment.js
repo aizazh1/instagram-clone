@@ -75,6 +75,8 @@ AddComment.propTypes = {
   comments: PropTypes.array.isRequired,
   setComments: PropTypes.func.isRequired,
   commentInput: PropTypes.object.isRequired,
+  isProfile: PropTypes.bool.isRequired,
+  addCommentHandler: PropTypes.func.isRequired,
 };
 
 export default AddComment;

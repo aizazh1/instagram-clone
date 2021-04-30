@@ -6,6 +6,7 @@ import Comment from "./Comment";
 import Actions from "../../post/Actions";
 import AddComment from "../../post/AddComment";
 import { useEffect, useRef, useState } from "react";
+import { BLANK_IMAGE } from "../../../constants/others";
 
 Modal.setAppElement("#root");
 
@@ -105,7 +106,7 @@ const Post = ({
                 src={
                   profile.profileImage
                     ? `/images/avatars/${profile.username}.jpg`
-                    : "/images/avatars/blank.png"
+                    : BLANK_IMAGE
                 }
                 alt=""
                 className="h-8 w-8 rounded-full"
@@ -164,9 +165,13 @@ const Post = ({
 };
 
 Post.propTypes = {
-  post: PropTypes.object,
-  setModalClose: PropTypes.func.isRequired,
-  currentUser: PropTypes.object,
+  isOpen: PropTypes.bool,
+  photoState: PropTypes.object,
+  setPhotoState: PropTypes.func,
+  photoIndex: PropTypes.number,
+  setModalClose: PropTypes.func,
+  profile: PropTypes.object,
+  loggedInUser: PropTypes.object,
 };
 
 export default Post;

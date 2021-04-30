@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BLANK_IMAGE } from "../../../constants/others";
 import { getUserByUsername } from "../../../services/firebase";
 
 const Comment = ({ comment, displayName }) => {
@@ -22,7 +23,7 @@ const Comment = ({ comment, displayName }) => {
           src={
             hasImg
               ? `/images/avatars/${displayName}.jpg`
-              : "/images/avatars/blank.png"
+              : BLANK_IMAGE
           }
           alt=""
           className="h-8 w-8 rounded-full"
@@ -39,7 +40,6 @@ const Comment = ({ comment, displayName }) => {
 };
 
 Comment.propTypes = {
-  profile: PropTypes.object,
   comment: PropTypes.string,
   displayName: PropTypes.string,
 };

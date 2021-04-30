@@ -41,8 +41,8 @@ const Suggestions = ({ userId, docId }) => {
 };
 
 Suggestions.propTypes = {
-  loggedInUserId: propTypes.string,
-  loggedInDocId: propTypes.string,
+  userId: propTypes.string,
+  docId: propTypes.string,
 };
 
 export default Suggestions;

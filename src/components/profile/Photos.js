@@ -9,8 +9,6 @@ const Photos = ({ photos, loaded, profile, loggedInUser }) => {
   const [clicked, setClicked] = useState(false);
   const [photosState, setPhotosState] = useState([]);
 
-  // console.log(photosState);
-
   useEffect(() => {
     setPhotosState(photos)
   }, [photos])
@@ -107,7 +105,8 @@ const Photos = ({ photos, loaded, profile, loggedInUser }) => {
 Photos.propTypes = {
   photos: PropTypes.array.isRequired,
   loaded: PropTypes.bool.isRequired,
-  profile: PropTypes.object.isRequired, 
+  profile: PropTypes.object.isRequired,
+  loggedInUser: PropTypes.object.isRequired,
 };
 
 export default Photos;

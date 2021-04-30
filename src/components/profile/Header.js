@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { isUserFollowingProfile, toggleFollow } from "../../services/firebase";
 import Skeleton from "react-loading-skeleton";
+import { BLANK_IMAGE } from "../../constants/others";
 
 const Header = ({
   photosCount,
@@ -71,7 +72,7 @@ const Header = ({
           src={
             profileImage
               ? `/images/avatars/${profile.username}.jpg`
-              : "/images/avatars/blank.png"
+              : BLANK_IMAGE
           }
         />
       </div>
